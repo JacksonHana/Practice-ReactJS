@@ -1,12 +1,12 @@
 
-import UpArrOfObj from "./UpArrOfObj";
+import ToDoList from "./ToDoList";
 
 
 function App() {
 
     return(
         <>
-            <UpArrOfObj/>
+            <ToDoList/>
         </>
     );
 
