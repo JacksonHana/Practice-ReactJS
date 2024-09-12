@@ -26,6 +26,7 @@ function ToDoList(){
     }
 
     function moveTaskUp(index){
+
         if (index > 0){
             const updatedTasks = [...tasks];
             [updatedTasks[index], updatedTasks[index - 1]] = 
@@ -35,7 +36,12 @@ function ToDoList(){
     }
     
     function moveTaskDown(index){
-        
+        if (index <  tasks.length - 1){
+            const updatedTasks = [...tasks];
+            [updatedTasks[index], updatedTasks[index + 1]] = 
+            [updatedTasks[index + 1], updatedTasks[index]]  // swap 2 elements in array
+            setTasks(updatedTasks);
+        }
     }
 
     return(
@@ -68,13 +74,13 @@ function ToDoList(){
 
                             <button 
                                 className="move-button"
-                                onClick={() => moveTaskUp}>
+                                onClick={() => moveTaskUp(index)}>
                                 👆
                             </button>
 
                             <button 
                                 className="move-button"
-                                onClick={() => moveTaskDown}>
+                                onClick={() => moveTaskDown(index)}>
                                 👇
                             </button>
 
