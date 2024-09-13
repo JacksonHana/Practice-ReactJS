@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 
-function MyComponent(){
+function UseState(){
 
     const [name, setName] = useState("Guest");
     const [age, setAge] = useState(0);
@@ -34,4 +34,4 @@ function MyComponent(){
     );
 }
 
-export default MyComponent
+export default UseState
