@@ -1,12 +1,11 @@
 
-import ComponentA from "./ComponentA";
-
+import Stopwatch from "./Stopwatch";
 
 function App() {
 
     return(
         <>
-            <ComponentA/>
+            <Stopwatch/>
         </>
     );
 
