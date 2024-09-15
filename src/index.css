@@ -13,6 +13,7 @@ body{
     border-radius: 50px;
     background-color: wheat;
     padding: 30px;
+
 }
 
 .display{
@@ -22,4 +23,41 @@ body{
     color: hsl(0, 00%, 30%);
     text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.75);
     margin-bottom: 25px;
+}
+
+.control button{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 5px;
+    min-width: 125px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.5s ease;
+}
+
+.start-button{
+    background-color: hsl(115, 100%, 40%);
+}
+
+.start-button:hover{
+    background-color: hsl(115, 100%, 30%);
+}
+
+.stop-button{
+    background-color: hsl(10, 90%, 50%);
+}
+
+.stop-button:hover{
+    background-color: hsl(10, 90%, 40%);
+}
+
+.reset-button{
+    background-color: hsl(205, 90%, 60%);
+}
+
+.reset-button:hover{
+    background-color: hsl(205, 90%, 45%);
 }
