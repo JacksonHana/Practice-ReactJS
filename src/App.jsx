@@ -1,11 +1,12 @@
 
-import Stopwatch from "./Stopwatch";
+import Message from "./ReactFormula/prop";
+
 
 function App() {
 
     return(
         <>
-            <Stopwatch/>
+            <Message text="Hello loo" bgColor="red"/>
         </>
     );
 
