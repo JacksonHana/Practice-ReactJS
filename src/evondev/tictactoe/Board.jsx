@@ -1,18 +1,21 @@
 import React from 'react';
 import Cell from './Cell';
 
-const Board = () => {
+const Board = (props) => {
+    //Array(9).fill() => ()
+    console.log(props);
+
     return (
         <div className='game-board'>
-            <Cell></Cell>
-            <Cell></Cell>
-            <Cell></Cell>
-            <Cell></Cell>
-            <Cell></Cell>
-            <Cell></Cell>
-            <Cell></Cell>
-            <Cell></Cell>
-            <Cell></Cell>
+            {props.cells.map((item, index) => (
+                <Cell 
+                    key = {index} 
+                    value={item} 
+                    onClick={() => props.onClick(index)}
+                    className={item === 'X' ? 'is-x' : item === 'O' ? 'is-o' : "" }
+                ></Cell>
+            ))}
+
         </div>
     );
 };
