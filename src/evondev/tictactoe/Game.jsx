@@ -4,24 +4,33 @@ import "./GameStyle.css";
 import { calculateWinner } from '../../utils';
 
 const Game = () => {
-    const [board, setBoard] = useState(Array(9).fill(null));
-    const [xIsNext, setIsXNext] = useState(true);
-    const winner = calculateWinner(board);
+    // const [board, setBoard] = useState(Array(9).fill(null));
+    // const [xIsNext, setIsXNext] = useState(true);
+    const [state, setState] = useState({
+        board: Array(9).fill(null),
+        xIsNext: true,
+    });
+    const winner = calculateWinner(state.board);
 
     const handleClick = (index) => {
-        const boardCopy = [...board];
+        const boardCopy = [...state.board];
         if (winner || boardCopy[index]) return;
-        boardCopy[index] = xIsNext ? 'X' : 'O';
-        setBoard(boardCopy);
-        setIsXNext((xIsNext) => !xIsNext);
+        boardCopy[index] = state.xIsNext ? 'X' : 'O';
+        setState({
+            board: boardCopy,
+            xIsNext: !state.xIsNext,
+        });
+        // setBoard(boardCopy);
+        // setIsXNext((xIsNext) => !xIsNext);
     };
     const handleResetGame = () => {
-        setBoard(Array(9).fill(null));
+        // setBoard(Array(9).fill(null));
+        // setXIsNext(true);
     }
 
     return (
         <div>
-            <Board cells = {board} onClick={handleClick}></Board>
+            <Board cells = {state.board} onClick={handleClick}></Board>
             {winner && <div className="game-winner">
                 Winner is {winner}
             </div>}
